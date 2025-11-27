@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ff99cc, #ff6699);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+body.dark {
+    background: linear-gradient(135deg,#1a1a1a, #000);
+    color: white;
+}
+
+#modeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+body.dark #modeBtn {
+    background: #333;
+    color: white;
+}
+
+.card {
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1.2s ease;
+    transition: 0.5s;
+}
+
+body.dark .card {
+    background: #1f1f1f;
+    color: white;
+}
+
+#fotopacar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fotoMuncul 1.5s forwards ease;
+}
+
+h1 {
+    color: #ff3366;
+    margin-bottom: 10px;
+}
+
+body.dark h1 {
+    color: #ff6699;
+}
+
+p {
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+body.dark p {
+    color: #ddd;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #ff3366;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff1a4d;
+}
+
+.love {
+    position: fixed;
+    top: -10px;
+    font-size: 25px;
+    animation: fall linear;
+    color: #ff1a75;
+    z-index: 10;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(120vh); opacity: 0;}
+}
+
+@keyframes fotoMuncul {
+    0% { opacity: 0; ; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: red;
+    top: -10px;
+    animation: confetti 3s linear forwards;
+    z-index: 999;
+    font-size: 30px !important;
+}
+
+@keyframes confetti {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(120vh) rotate(720deg); opacity: 0; }
+}
